@@ -1,5 +1,6 @@
 import React from 'react'
-import Carousel from 'react-material-ui-carousel'
+import Carousel from 'react-multi-carousel'
+import 'react-multi-carousel/lib/styles.css'
 import "../home/banner.css";
 
 const data = [
@@ -11,36 +12,49 @@ const data = [
 
 // console.log(data);
 
+const responsive = {
+    superLargeDesktop: {
+        breakpoint: { max: 4000, min: 3000 },
+        items: 1
+    },
+    desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 1
+    },
+    tablet: {
+        breakpoint: { max: 1024, min: 464 },
+        items: 1
+    },
+    mobile: {
+        breakpoint: { max: 464, min: 0 },
+        items: 1
+    }
+};
+
 const Banner = () => {
     return (
         <>
-
             <Carousel
-                className="carasousel"
+                responsive={responsive}
+                infinite={true}
                 autoPlay={true}
-                animation="slide"
-                indicators={false}
-                navButtonsAlwaysVisible={true}
-                cycleNavigation={true}
-                navButtonsProps={{
-                    style: {
-                        background: "#fff",
-                        color: "#494949",
-                        borderRadius: 0,
-                        marginTop: -22,
-                        height: "104px",
-                    }
-                }}>
+                autoPlaySpeed={3000}
+                keyBoardControl={true}
+                customTransition="all .5"
+                transitionDuration={500}
+                containerClass="carousel-container"
+                removeArrowOnDeviceType={["tablet", "mobile"]}
+                className="carasousel"
+            >
                 {
                     data?.map((imag, i) => {
                         return (
-                            <>
-                                <img src={imag} alt="img" key={i} className="banner_img" />
-                            </>
+                            <div key={i}>
+                                <img src={imag} alt="img" className="banner_img" />
+                            </div>
                         )
                     })
                 }
-
             </Carousel>
         </>
     )

@@ -1,15 +1,15 @@
-import { createStore, applyMiddleware } from "redux";
-import thunk from "redux-thunk";
-import { composeWithDevTools } from "redux-devtools-extension";
+import { configureStore } from "@reduxjs/toolkit";
 import rootreducers from "./Components/redux/reducers/main";
 
-
-
-const middleware = [thunk];
-
-const store = createStore(
-  rootreducers,
-  composeWithDevTools(applyMiddleware(...middleware))
-);
+const store = configureStore({
+  reducer: rootreducers,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: ['persist/PERSIST'],
+      },
+    }),
+  devTools: process.env.NODE_ENV !== 'production',
+});
 
 export default store;
