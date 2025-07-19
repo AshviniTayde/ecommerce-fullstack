@@ -7,17 +7,20 @@
     "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "keywords": ["ecommerce", "nodejs", "express", "mongodb"],
+  "author": "AshviniTayde",
+  "license": "MIT",
+  "description": "Backend server for ecommerce fullstack application",
   "dependencies": {
-    "bcryptjs": "^3.0.2",
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.15.1",
     "validator": "^13.15.15"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
   }
 }
