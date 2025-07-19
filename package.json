@@ -33,12 +33,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/amazon-clone.git"
+    "url": "git+https://github.com/AshviniTayde/ecommerce-fullstack.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/amazon-clone/issues"
+    "url": "https://github.com/AshviniTayde/ecommerce-fullstack/issues"
   },
-  "homepage": "https://github.com/yourusername/amazon-clone#readme",
+  "homepage": "https://github.com/AshviniTayde/ecommerce-fullstack#readme",
   "dependencies": {
     "ansi-regex": "^5.0.1",
     "ansi-styles": "^4.3.0",
